@@ -73,7 +73,7 @@ def handle_client(sock, addr):
             elif command == 'LIST':
                 with tasks_lock:
                     if not tasks:
-                        res = 'Список задач пуст'
+                        res = ''
                     else:
                         a = []
                         for i, (task, status) in enumerate(tasks.items(), start=1):
