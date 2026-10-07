@@ -79,7 +79,7 @@ def handle_client(sock, addr):
                         for i, (task, status) in enumerate(tasks.items(), start=1):
                             a.append(f'{i}. {status} {task}')
                         res = '\n'.join(a)
-                proto.send_message(sock, 'LIST', '\n'.join(a).encode())
+                proto.send_message(sock, 'LIST', res.encode())
             elif command == "QUIT":
                 proto.send_message(sock, "TEXT", b"* bye")
                 print(f"[-] {username} вышел через QUIT")
