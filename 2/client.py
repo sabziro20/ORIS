@@ -41,6 +41,8 @@ def main():
     try:
         while not stop_event.is_set():
             line = input('> ').split()
+            if not line:
+                continue
             c = line[0]
             t = ' '.join(line[1:])
             if c == '/quit':
